@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Site</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header role="heading">
+      <nav>
+        <a
+          href="https://www.linkedin.com/in/tom-dhalluin-49952b266/"
+          target="_blank"
+          class="nav-icon"
+          aria-label="visit homepage"
+          aria-current="page"
+          ><span>Tom Dhalluin</span></a
+        >
+
+        <div class="main-navlinks">
+          <button
+            class="hamburger"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="navlinks-container">
+            <a href="#" aria-current="page">Accueil</a>
+            <a href="Copie de Mon CV.pdf" download="Copie de Mon Cv.pdf"
+              >Mon CV</a
+            >
+            <a href="#">À Propos de moi</a>
+            <a href="/Contact Me/">Contactez-Moi</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  z-index: 0;
 }
 
 html {
@@ -13,14 +14,24 @@ body {
   background: #f4f4f4;
 }
 
+header {
+  position: fixed;
+  z-index: 1;
+}
+
 nav {
   position: fixed;
   width: 100%;
   display: flex;
   align-items: center;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    153deg,
+    rgba(34, 193, 195, 1) 10%,
+    rgba(253, 187, 45, 1) 70%
+  );
   padding: 15px 25px;
-  background: #fafafa;
-  box-shadow: inset 0px -1px 0px #c5c5c6;
+  box-shadow: inset 0px -2px 0px white;
   cursor: default;
 }
 
@@ -36,7 +47,7 @@ nav {
   font-size: 25px;
   margin-left: 10px;
   font-weight: 400;
-  color: #333;
+  color: white;
 }
 
 .hamburger {
@@ -55,7 +66,7 @@ nav {
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
-  color: #414141;
+  color: white;
   display: inline-block;
   position: relative;
 }
@@ -69,7 +80,7 @@ nav {
   height: 1px;
   transform: scaleX(0);
   transform-origin: left;
-  background: #333;
+  background: yellow;
   transition: transform 0.2s ease-out;
 }
 
@@ -84,7 +95,7 @@ nav {
 @media (max-width: 850px) {
   nav {
     padding: 15px 20px;
-    position: relative;
+    position: fixed;
   }
 
   .nav-icon span {
@@ -106,7 +117,7 @@ nav {
     cursor: pointer;
     border: none;
     display: flex;
-    background: #fafafa;
+    background: transparent;
     align-items: center;
     position: relative;
   }
@@ -115,7 +126,7 @@ nav {
     display: block;
     width: 100%;
     height: 2px;
-    background: #333;
+    background: white;
     position: absolute;
     pointer-events: none;
     transition: opacity 0.3s 0.15s ease-out;
@@ -152,7 +163,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    background: #fafafa;
+    background: transparent;
     top: 100%;
     left: 0;
     height: 100vh;
@@ -175,6 +186,10 @@ nav {
     font-size: 18px;
     margin: 10px 0;
   }
+
+  main.open {
+    filter: blur(4px);
+  }
 }
 
 @media (max-width: 500px) {
@@ -185,4 +200,16 @@ nav {
   .nav-icon span {
     font-size: 20px;
   }
+}
+
+main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    33deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
 }

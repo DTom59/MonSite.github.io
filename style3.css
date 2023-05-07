@@ -147,7 +147,7 @@ main {
   background: rgb(34, 193, 195);
   border-radius: 50px;
   height: 27px;
-  width: 252px;
+  width: 222px;
   transform: translateX(-100%);
   transition: transform 0.3s;
   z-index: -1;
@@ -160,7 +160,7 @@ main {
 
 .center div button:hover {
   border-color: #2980b9;
-  width: 250px;
+  width: 220px;
 }
 
 .center div button:hover::before {
@@ -286,5 +286,15 @@ main {
   }
   .center div a {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 370px) {
+  .center div button::before {
+    width: 202px;
+  }
+  .center div button:hover {
+    border-color: #2980b9;
+    width: 200px;
   }
 }

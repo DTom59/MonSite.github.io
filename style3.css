@@ -16,11 +16,17 @@ body {
 
 header {
   position: fixed;
+  width: 100%;
   z-index: 1;
 }
 
+.addonA {
+  margin-right: 6px;
+  font-size: 14px;
+}
+
 nav {
-  position: fixed;
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -167,7 +173,7 @@ main {
   transform: translateX(0);
 }
 
-@media (max-width: 850px) {
+@media (max-width: 958px) {
   nav {
     padding: 15px 20px;
     position: fixed;

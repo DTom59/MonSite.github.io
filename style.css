@@ -16,11 +16,17 @@ body {
 
 header {
   position: fixed;
+  width: 100%;
   z-index: 1;
 }
 
+.addonA {
+  margin-right: 6px;
+  font-size: 14px;
+}
+
 nav {
-  position: fixed;
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -33,6 +39,11 @@ nav {
   padding: 15px 25px;
   box-shadow: inset 0px -2px 0px white;
   cursor: default;
+}
+
+.nav-adjust {
+  width: 100%;
+  height: 61px;
 }
 
 .nav-icon {
@@ -92,7 +103,7 @@ nav {
   transform: scaleX(1);
 }
 
-@media (max-width: 850px) {
+@media (max-width: 958px) {
   nav {
     padding: 15px 20px;
     position: fixed;

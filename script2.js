@@ -8,9 +8,26 @@ hamburger.addEventListener("click", () => {
   main.classList.toggle("open");
 });
 
+function addClass(event) {
+  const addonA = event.target.querySelector(".addonA");
+  addonA.classList.add("fa-bounce");
+}
+
+function removeClass(event) {
+  const addonA = event.target.querySelector(".addonA");
+  addonA.classList.remove("fa-bounce");
+}
+
+const nlksA = document.querySelectorAll(".navlinks-container a");
+
+nlksA.forEach(function (nvlksA) {
+  nvlksA.addEventListener("mouseenter", addClass);
+  nvlksA.addEventListener("mouseleave", removeClass);
+});
+
 new ResizeObserver((entries) => {
   if (entries[0].contentRect.width <= 850) {
-    navlinksContainer.style.transition = "transform 0.2s 0.15 ease-out";
+    navlinksContainer.style.transition = "transform 0.2s 0.15s ease-out";
   } else {
     navlinksContainer.style.transition = "none";
   }

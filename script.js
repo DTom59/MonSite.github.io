@@ -32,3 +32,31 @@ new ResizeObserver((entries) => {
     navlinksContainer.style.transition = "none";
   }
 }).observe(document.body);
+
+const weatherAPI = "b8fe848a27a98090e0f21d87f4d69fe4";
+
+let url =
+  "https://api.openweathermap.org/data/2.5/weather?q=Halluin&appid=" +
+  weatherAPI +
+  "&units=metric&lang=fr";
+
+fetch(url).then((response) =>
+  response.json().then((data) => {
+    console.log(data);
+    document.querySelector(".city").innerHTML =
+      "<i class='fa-solid fa-location-dot pin-icon'></i>" + data.name;
+    document.querySelector(".temp").innerHTML =
+      "<i class='fa-solid fa-temperature-three-quarters temp-icon'></i>" +
+      Math.trunc(data.main.temp) +
+      "°C";
+    document.querySelector(".sky").innerHTML =
+      "<i class='fa-solid fa-cloud cloud-icon'></i>" +
+      data.weather[0].description;
+    document.querySelector(".wind").innerHTML =
+      "<i class='fa-sharp fa-solid fa-arrow-right arrow-wind'></i>" +
+      data.wind.speed;
+    ddeg = data.wind.deg;
+    const arrowWind = document.querySelector(".arrow-wind");
+    arrowWind.style.transform = "rotate(" + ddeg + "deg)";
+  })
+);

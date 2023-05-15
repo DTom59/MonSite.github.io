@@ -219,3 +219,82 @@ main {
     rgba(253, 187, 45, 1) 100%
   );
 }
+
+.weather {
+  position: relative;
+  width: 280px;
+  height: 320px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 110px;
+}
+
+.weather div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.city {
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  left: 0;
+  top: 0;
+  font-size: 1.3em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+.temp {
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  right: 0;
+  top: 0;
+  font-size: 1.3em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+.sky {
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  left: 0;
+  bottom: 0;
+  font-size: 1.3em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+.wind {
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  right: 0;
+  bottom: 0;
+  font-size: 1.3em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+.arrow-wind {
+  position: absolute;
+  top: 15%;
+}
+
+.temp-icon {
+  position: absolute;
+  top: 15%;
+}
+
+.cloud-icon {
+  position: absolute;
+  top: 15%;
+}
+
+.pin-icon {
+  position: absolute;
+  top: 15%;
+}

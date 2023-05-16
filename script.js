@@ -43,20 +43,30 @@ let url =
 fetch(url).then((response) =>
   response.json().then((data) => {
     console.log(data);
-    document.querySelector(".city").innerHTML =
-      "<i class='fa-solid fa-location-dot pin-icon'></i>" + data.name;
-    document.querySelector(".temp").innerHTML =
-      "<i class='fa-solid fa-temperature-three-quarters temp-icon'></i>" +
-      Math.trunc(data.main.temp) +
-      "°C";
-    document.querySelector(".sky").innerHTML =
-      "<i class='fa-solid fa-cloud cloud-icon'></i>" +
-      data.weather[0].description;
-    document.querySelector(".wind").innerHTML =
-      "<i class='fa-sharp fa-solid fa-arrow-right arrow-wind'></i>" +
-      data.wind.speed;
+    document.querySelector(".city div").innerHTML = data.name;
+
+    document.querySelector(".temp div").innerHTML =
+      Math.trunc(data.main.temp) + "°C";
+
+    document.querySelector(".wind div").innerHTML =
+      Math.trunc(data.wind.speed) + " km/h";
     ddeg = data.wind.deg;
     const arrowWind = document.querySelector(".arrow-wind");
     arrowWind.style.transform = "rotate(" + ddeg + "deg)";
+
+    document.querySelector(".humidity div").innerHTML =
+      data.main.humidity + "%";
+
+    weatherDescri = data.weather[0].description;
+    const skyContainer = document.querySelector(".sky .content-div");
+    skyContainer.innerHTML = weatherDescri;
+    const skyI = document.querySelector(".sky-icon");
+    if (weatherDescri === "pluie") {
+      skyI.classList.add("fa-solid", "fa-cloud-rain");
+    } else if (weatherDescri === "ensoleillé") {
+      skyI.classList.add("fa-solid", "fa-sun");
+    } else {
+      skyI.classList.add("fa-solid", "fa-cloud");
+    }
   })
 );

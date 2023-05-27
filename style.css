@@ -225,8 +225,7 @@ main {
   position: relative;
   width: 280px;
   height: 420px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
   top: 110px;
   display: grid;
   grid-template-columns: 140px 140px;

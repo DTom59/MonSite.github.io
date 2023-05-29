@@ -38,6 +38,7 @@ new ResizeObserver((entries) => {
 //API OpenWeather
 
 const weatherAPI = "b8fe848a27a98090e0f21d87f4d69fe4";
+const weatherDiv = document.querySelector(".weather");
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
@@ -45,6 +46,7 @@ if (navigator.geolocation) {
   console.log(
     "La géolocalisation n'est pas prise en charge par votre navigateur."
   );
+  weatherDiv.style.visibility = "hidden";
 }
 
 function successCallback(position) {
